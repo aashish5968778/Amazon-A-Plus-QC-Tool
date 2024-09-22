@@ -1,198 +1,74 @@
-/* Basic Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    overflow-x: hidden;
-}
-
-/* Welcome Screen */
-.welcome-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #6C63FF, #3A3B8F);
-    animation: fadeIn 1s ease-out;
-}
-
-.welcome-content {
+/* User Info Section */
+#user-info {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(50px);
-    animation: slideUp 1s ease-out forwards;
+    margin-top: 20px;
 }
 
-.welcome-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #fff;
-    background: -webkit-linear-gradient(45deg, #f8a5a5, #ff6b6b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+#user-info img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+    border-radius: 50%;
 }
 
-.welcome-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #444;
+.hidden {
+    display: none;
 }
 
-.welcome-content img {
-    max-width: 70%;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
+/* Layout and Styling for the Main QC Page */
+
+.upload-section, .preview-section, .validation-section, .result-section {
+    margin: 20px 0;
 }
 
-.start-btn {
-    padding: 15px 30px;
-    font-size: 20px;
-    background-color: #ff6b6b;
+.upload-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.start-btn:hover {
-    background-color: #d65050;
-    transform: scale(1.05);
-}
-
-/* Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    0% {
-        transform: translateY(50px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Hidden Class */
-.hidden {
-    display: none;
-}
-
-/* Main Tool Styles */
-.main-tool {
-    display: none;
-    animation: fadeIn 1s ease-out;
-}
-
-.upload-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.upload-btn {
-    padding: 10px 15px;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
     cursor: pointer;
 }
 
 .upload-btn:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 
-.preview-section {
-    text-align: center;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.preview-section img {
+    max-width: 300px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
 }
-/* Existing styles for the main tool (if any) */
 
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
+.validation-section ul {
+    list-style-type: none;
     padding: 0;
-    background-color: #f5f5f5;
 }
 
-/* Welcome Screen Styles (if you have it) */
-/* Add login screen styles below or above this */
-
-/* Login Screen */
-.login-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #6C63FF, #3A3B8F);
-    animation: fadeIn 1s ease-out;
+.validation-section li {
+    margin: 5px 0;
+    font-size: 1.1em;
 }
 
-.login-content {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.login-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #007BFF;
-}
-
-.login-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #444;
-}
-
-/* Hidden Class */
-.hidden {
-    display: none;
-}
-
-/* Main Tool Styles */
-.main-tool {
-    display: none;
-    animation: fadeIn 1s ease-out;
-}
-
-.upload-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.upload-btn {
-    padding: 10px 15px;
-    background-color: #007BFF;
+.qc-btn {
+    background-color: #008CBA;
+    padding: 10px 20px;
     color: white;
-    border-radius: 5px;
+    border: none;
     cursor: pointer;
 }
 
-.upload-btn:hover {
-    background-color: #0056b3;
+.qc-btn:hover {
+    background-color: #007bb5;
 }
 
-.preview-section {
-    text-align: center;
+.result-section {
+    margin-top: 30px;
     padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
+}
+
+#mainTool {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
