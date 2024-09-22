@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Google</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Login Screen Section -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-content">
+            <h1>Login to Amazon A+ QC Tool</h1>
+            <p>Sign in using your Google account to access the tool.</p>
+            <div id="g_id_onload"
+                 data-client_id="928691583865-lfnbgriiffhgd23rhr9435nl07p6jdu0.apps.googleusercontent.com"
+                 data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-size="large"
+                 data-theme="outline"
+                 data-text="sign_in_with"
+                 data-shape="rectangular"
+                 data-logo_alignment="left">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Tool Section (Hidden initially) -->
+    <div id="mainTool" class="main-tool hidden">
+        <h1>Amazon A+ Content QC Tool</h1>
+
+        <!-- Image Upload Section -->
+        <div class="upload-section">
+            <label for="imageUpload" class="upload-btn">Upload A+ Image</label>
+            <input type="file" id="imageUpload" style="display:none;" onchange="previewImage()">
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <img id="previewImage" src="" alt="Your A+ content preview will appear here" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon A+ QC Tool</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Welcome Screen Section -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-content">
+            <h1>Welcome to the Amazon A+ QC Tool</h1>
+            <p>This tool helps designers ensure their A+ content meets Amazon’s quality standards.</p>
+            <img src="designer-illustration.png" alt="Designer Illustration">
+            <button id="startButton" class="start-btn">Start</button>
+        </div>
+    </div>
+
+    <!-- Main Tool Section (Hidden initially) -->
+    <div id="mainTool" class="main-tool hidden">
+        <h1>Amazon A+ Content QC Tool</h1>
+
+        <!-- Image Upload Section -->
+        <div class="upload-section">
+            <label for="imageUpload" class="upload-btn">Upload A+ Image</label>
+            <input type="file" id="imageUpload" style="display:none;" onchange="previewImage()">
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <img id="previewImage" src="" alt="Your A+ content preview will appear here" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
