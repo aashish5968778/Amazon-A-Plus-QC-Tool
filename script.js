@@ -1,3 +1,25 @@
+// Function to preview the uploaded image in modules
+function previewImage(inputId, imgId) {
+    const input = document.getElementById(inputId);
+    const img = document.getElementById(imgId);
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Function to type or paste text into a module
+function typeOrPasteText(elementId) {
+    const text = prompt("Type or paste the text:", "");
+    if (text !== null) {
+        document.getElementById(elementId).innerText = text;
+    }
+}
+
 // Handle start button click to show the login screen
 document.getElementById("startButton").addEventListener("click", function() {
     document.getElementById("welcomeScreen").classList.add("hidden"); // Hide welcome screen
@@ -40,7 +62,7 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
 }
 
-// Function to preview the uploaded image
+// Function to preview the uploaded image for QC validation
 function previewImage() {
     const file = document.getElementById("imageUpload").files[0];
     const reader = new FileReader();

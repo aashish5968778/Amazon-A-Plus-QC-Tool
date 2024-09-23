@@ -1,3 +1,106 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Main Tool Container */
+#mainTool {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Module Container */
+.module {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Image Styling */
+.banner img, .brand-image, .key-feature img, .step-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.preview-section img {
+    max-width: 300px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/* Upload and Type Buttons */
+.upload-btn, .type-btn, .qc-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.upload-btn:hover, .type-btn:hover {
+    background-color: #45a049;
+}
+
+.qc-btn {
+    background-color: #008CBA;
+}
+
+.qc-btn:hover {
+    background-color: #007bb5;
+}
+
+/* Paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Key Features and Installation Steps */
+.key-features-container, .installation-steps-container, 
+.key-features-text-container, .installation-steps-text-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.key-feature-image, .installation-step-image {
+    text-align: center;
+}
+
+.key-feature-text, .installation-step-text {
+    width: 220px;
+    text-align: center;
+}
+
+.key-feature img, .step-image {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+}
+
+.key-feature-text p, .installation-step-text p {
+    font-size: 14px;
+    color: #555;
+}
+
 /* User Info Section */
 #user-info {
     text-align: center;
@@ -11,34 +114,17 @@
     border-radius: 50%;
 }
 
+/* Hidden Elements */
 .hidden {
     display: none;
 }
 
-/* Layout and Styling for the Main QC Page */
-
+/* Upload, Preview, Validation, and Result Sections */
 .upload-section, .preview-section, .validation-section, .result-section {
     margin: 20px 0;
 }
 
-.upload-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.upload-btn:hover {
-    background-color: #45a049;
-}
-
-.preview-section img {
-    max-width: 300px;
-    border: 1px solid #ddd;
-    margin-top: 10px;
-}
-
+/* Validation Section */
 .validation-section ul {
     list-style-type: none;
     padding: 0;
@@ -49,26 +135,9 @@
     font-size: 1.1em;
 }
 
-.qc-btn {
-    background-color: #008CBA;
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.qc-btn:hover {
-    background-color: #007bb5;
-}
-
+/* Result Section */
 .result-section {
     margin-top: 30px;
     padding: 20px;
     border: 2px solid #ddd;
-}
-
-#mainTool {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
 }
