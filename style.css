@@ -9,7 +9,7 @@ body {
 #mainTool {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -19,24 +19,48 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
-.module {
-    margin: 20px 0;
+/* Module Layout */
+.module-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.module-content {
+    flex: 1;
     text-align: center;
+    margin-right: 20px;
+}
+
+.report-container {
+    flex: 1;
+    border-left: 2px solid #ddd;
+    padding-left: 20px;
 }
 
 .image-container {
     display: inline-block;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 300px;
     border: 2px solid #ddd;
     background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-preview {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .upload-btn {

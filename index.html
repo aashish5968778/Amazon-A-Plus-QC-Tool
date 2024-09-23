@@ -12,94 +12,41 @@
         <h1>Amazon A+ Content QC Tool</h1>
 
         <!-- Module 1: Brand Logo -->
-        <div class="module brand-logo">
-            <h2>Brand Logo</h2>
-            <div class="image-container">
-                <img id="brandLogoImage" src="#" alt="Brand Logo" class="image-preview">
+        <div class="module-container">
+            <div class="module-content">
+                <h2>Brand Logo</h2>
+                <div class="image-container">
+                    <img id="brandLogoImage" src="#" alt="Brand Logo" class="image-preview">
+                    <label for="brandLogoUpload" class="upload-btn">Upload Brand Logo</label>
+                    <input type="file" id="brandLogoUpload" accept="image/*" style="display: none;" onchange="startQC('brandLogoUpload', 'brandLogoImage')">
+                </div>
             </div>
-            <label for="brandLogoUpload" class="upload-btn">Upload Brand Logo</label>
-            <input type="file" id="brandLogoUpload" accept="image/*" style="display: none;" onchange="startQC('brandLogoUpload', 'brandLogoImage')">
-            <div class="validation-section" id="brandLogoReport"></div>
+            <div class="report-container" id="brandLogoReport"></div>
         </div>
 
         <!-- Module 2: Brand Description -->
-        <div class="module">
-            <h2>Brand Description</h2>
-            <p id="brandDescriptionText">Type or paste a brief overview of your brand here.</p>
-            <button onclick="typeOrPasteText('brandDescriptionText')" class="type-btn">Type/Paste Text</button>
+        <div class="module-container">
+            <div class="module-content">
+                <h2>Brand Description</h2>
+                <p id="brandDescriptionText">Type or paste a brief overview of your brand here.</p>
+                <button onclick="typeOrPasteText('brandDescriptionText')" class="type-btn">Type/Paste Text</button>
+            </div>
         </div>
 
         <!-- Module 3: Banner Image -->
-        <div class="module banner">
-            <h2>Banner Image</h2>
-            <div class="image-container">
-                <img id="bannerImage" src="#" alt="Banner Image" class="image-preview">
+        <div class="module-container">
+            <div class="module-content">
+                <h2>Banner Image</h2>
+                <div class="image-container">
+                    <img id="bannerImage" src="#" alt="Banner Image" class="image-preview">
+                    <label for="bannerImageUpload" class="upload-btn">Upload Banner Image</label>
+                    <input type="file" id="bannerImageUpload" accept="image/*" style="display: none;" onchange="startQC('bannerImageUpload', 'bannerImage')">
+                </div>
             </div>
-            <label for="bannerImageUpload" class="upload-btn">Upload Banner Image</label>
-            <input type="file" id="bannerImageUpload" accept="image/*" style="display: none;" onchange="startQC('bannerImageUpload', 'bannerImage')">
-            <div class="validation-section" id="bannerImageReport"></div>
+            <div class="report-container" id="bannerImageReport"></div>
         </div>
 
-        <!-- Module 4: Product Description -->
-        <div class="module">
-            <h2>Product Description</h2>
-            <p id="productDescriptionText">Type or paste the product details here.</p>
-            <button onclick="typeOrPasteText('productDescriptionText')" class="type-btn">Type/Paste Text</button>
-        </div>
-
-        <!-- Modules 5-8: Key Features Images -->
-        <div class="key-features-container">
-            <div class="key-feature-image">
-                <h2>Key Feature 1</h2>
-                <img id="featureImage1" src="#" alt="Key Feature 1" class="image-preview">
-                <label for="featureImageUpload1" class="upload-btn">Upload Image</label>
-                <input type="file" id="featureImageUpload1" accept="image/*" style="display: none;" onchange="startQC('featureImageUpload1', 'featureImage1')">
-                <div class="validation-section" id="featureImageReport1"></div>
-            </div>
-            <div class="key-feature-image">
-                <h2>Key Feature 2</h2>
-                <img id="featureImage2" src="#" alt="Key Feature 2" class="image-preview">
-                <label for="featureImageUpload2" class="upload-btn">Upload Image</label>
-                <input type="file" id="featureImageUpload2" accept="image/*" style="display: none;" onchange="startQC('featureImageUpload2', 'featureImage2')">
-                <div class="validation-section" id="featureImageReport2"></div>
-            </div>
-        </div>
-
-        <!-- Modules 9-12: Key Features Text -->
-        <div class="key-features-text-container">
-            <div class="key-feature-text">
-                <p id="featureText1">Key Feature 1: Type or paste a description here.</p>
-                <button onclick="typeOrPasteText('featureText1')" class="type-btn">Type/Paste Text</button>
-            </div>
-        </div>
-
-        <!-- Module 13: Installation Banner Image -->
-        <div class="module banner">
-            <h2>Installation Banner</h2>
-            <img id="installationBannerImage" src="#" alt="Installation Banner" class="image-preview">
-            <label for="installationBannerUpload" class="upload-btn">Upload Installation Banner</label>
-            <input type="file" id="installationBannerUpload" accept="image/*" style="display: none;" onchange="startQC('installationBannerUpload', 'installationBannerImage')">
-            <div class="validation-section" id="installationBannerReport"></div>
-        </div>
-
-        <!-- Modules 14-17: Installation Steps Images -->
-        <div class="installation-steps-container">
-            <div class="installation-step-image">
-                <h2>Step 1</h2>
-                <img id="stepImage1" src="#" alt="Step 1" class="image-preview">
-                <label for="stepImageUpload1" class="upload-btn">Upload Step Image</label>
-                <input type="file" id="stepImageUpload1" accept="image/*" style="display: none;" onchange="startQC('stepImageUpload1', 'stepImage1')">
-                <div class="validation-section" id="stepImageReport1"></div>
-            </div>
-        </div>
-
-        <!-- Modules 18-21: Installation Steps Text -->
-        <div class="installation-steps-text-container">
-            <div class="installation-step-text">
-                <p id="stepText1">Step 1: Remove the latch or broken sash.</p>
-                <button onclick="typeOrPasteText('stepText1')" class="type-btn">Type/Paste Text</button>
-            </div>
-        </div>
+        <!-- You can repeat similar blocks for other modules -->
     </div>
 
     <!-- Link to JavaScript -->
