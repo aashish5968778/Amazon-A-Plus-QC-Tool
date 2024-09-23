@@ -30,51 +30,20 @@ h1 {
     text-align: center;
 }
 
-/* Upload Container for Images */
-.upload-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e0e0e0;
-    border-radius: 12px;
-    width: 100%;
-    height: 400px;
-    position: relative;
-}
-
-/* Image Preview Style */
-.upload-container img {
+/* Image Styling */
+.banner img, .brand-image, .key-feature img, .step-image {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
 }
 
-/* Upload Button Styling (centered within container) */
-.upload-container .upload-btn {
-    position: absolute;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
+.preview-section img {
+    max-width: 300px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
 }
 
-.upload-container .upload-btn:hover {
-    background-color: #45a049;
-}
-
-/* QC Report Section Next to Images */
-.qc-report {
-    margin-top: 20px;
-    text-align: left;
-    font-size: 14px;
-    color: #333;
-}
-
-/* Buttons for Text and Other Actions */
-.upload-btn, .type-btn, .qc-btn {
+/* Upload and Type Buttons */
+.upload-btn, .type-btn {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
@@ -90,15 +59,13 @@ h1 {
     background-color: #45a049;
 }
 
-.qc-btn {
-    background-color: #008CBA;
+/* Paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-.qc-btn:hover {
-    background-color: #007bb5;
-}
-
-/* Key Features and Installation Steps Containers */
+/* Key Features and Installation Steps */
 .key-features-container, .installation-steps-container, 
 .key-features-text-container, .installation-steps-text-container {
     display: flex;
@@ -124,40 +91,4 @@ h1 {
 .key-feature-text p, .installation-step-text p {
     font-size: 14px;
     color: #555;
-}
-
-/* User Info Section */
-#user-info {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#user-info img {
-    width: 100px;
-    height: 100px;
-    margin-top: 10px;
-    border-radius: 50%;
-}
-
-/* Hidden Elements */
-.hidden {
-    display: none;
-}
-
-/* Validation Section */
-.validation-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.validation-section li {
-    margin: 5px 0;
-    font-size: 1.1em;
-}
-
-/* Result Section */
-.result-section {
-    margin-top: 30px;
-    padding: 20px;
-    border: 2px solid #ddd;
 }

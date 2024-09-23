@@ -4,49 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon A+ QC Tool</title>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Welcome Screen -->
-    <div id="welcomeScreen" class="welcome-screen">
-        <h1>Welcome to Amazon A+ QC Tool</h1>
-        <p>Let's streamline your A+ content quality check with ease!</p>
-        
-        <!-- Start Button -->
-        <button id="startButton" class="start-btn">Start</button>
-    </div>
-
-    <!-- Login Screen (Initially Hidden) -->
-    <div id="loginScreen" class="hidden login-screen">
-        <h1>Login with Google</h1>
-        <div id="g_id_onload"
-             data-client_id="928691583865-lfnbgriiffhgd23rhr9435nl07p6jdu0.apps.googleusercontent.com"
-             data-callback="handleCredentialResponse">
-        </div>
-        <div class="g_id_signin"
-             data-type="standard"
-             data-size="large"
-             data-theme="outline"
-             data-text="sign_in_with"
-             data-shape="rectangular"
-             data-logo_alignment="left">
-        </div>
-    </div>
-
     <!-- Main Tool Section -->
-    <div id="mainTool" class="hidden">
+    <div id="mainTool">
         <h1>Amazon A+ Content QC Tool</h1>
 
         <!-- Module 1: Brand Logo -->
         <div class="module brand-logo">
-            <div class="upload-container">
-                <img id="brandLogoImage" src="#" alt="Brand Logo" class="brand-image" style="width: 970px; height: 600px;">
-                <label for="brandLogoUpload" class="upload-btn">Upload Brand Logo</label>
-                <input type="file" id="brandLogoUpload" accept="image/*" style="display: none;" onchange="previewAndQC('brandLogoUpload', 'brandLogoImage')">
-            </div>
-            <div class="qc-report" id="qcReportBrandLogo"></div>
+            <img id="brandLogoImage" src="#" alt="Brand Logo" class="brand-image" style="width: 970px; height: 600px;">
+            <label for="brandLogoUpload" class="upload-btn">Upload Brand Logo</label>
+            <input type="file" id="brandLogoUpload" accept="image/*" style="display: none;" onchange="previewImage('brandLogoUpload', 'brandLogoImage')">
         </div>
 
         <!-- Module 2: Brand Description -->
@@ -57,12 +27,9 @@
 
         <!-- Module 3: Banner Image -->
         <div class="module banner">
-            <div class="upload-container">
-                <img id="bannerImage" src="#" alt="Banner Image" style="width: 970px; height: 600px;">
-                <label for="bannerImageUpload" class="upload-btn">Upload Banner Image</label>
-                <input type="file" id="bannerImageUpload" accept="image/*" style="display: none;" onchange="previewAndQC('bannerImageUpload', 'bannerImage')">
-            </div>
-            <div class="qc-report" id="qcReportBannerImage"></div>
+            <img id="bannerImage" src="#" alt="Banner Image" style="width: 970px; height: 600px;">
+            <label for="bannerImageUpload" class="upload-btn">Upload Banner Image</label>
+            <input type="file" id="bannerImageUpload" accept="image/*" style="display: none;" onchange="previewImage('bannerImageUpload', 'bannerImage')">
         </div>
 
         <!-- Module 4: Product Description -->
@@ -74,36 +41,24 @@
         <!-- Module 5-8: Key Features Images (4 images) -->
         <div class="key-features-container">
             <div class="key-feature-image">
-                <div class="upload-container">
-                    <img id="featureImage1" src="#" alt="Key Feature 1" style="width: 220px; height: 220px;">
-                    <label for="featureImageUpload1" class="upload-btn">Upload Image</label>
-                    <input type="file" id="featureImageUpload1" accept="image/*" style="display: none;" onchange="previewAndQC('featureImageUpload1', 'featureImage1')">
-                </div>
-                <div class="qc-report" id="qcReportFeatureImage1"></div>
+                <img id="featureImage1" src="#" alt="Key Feature 1" class="key-feature" style="width: 220px; height: 220px;">
+                <label for="featureImageUpload1" class="upload-btn">Upload Image</label>
+                <input type="file" id="featureImageUpload1" accept="image/*" style="display: none;" onchange="previewImage('featureImageUpload1', 'featureImage1')">
             </div>
             <div class="key-feature-image">
-                <div class="upload-container">
-                    <img id="featureImage2" src="#" alt="Key Feature 2" style="width: 220px; height: 220px;">
-                    <label for="featureImageUpload2" class="upload-btn">Upload Image</label>
-                    <input type="file" id="featureImageUpload2" accept="image/*" style="display: none;" onchange="previewAndQC('featureImageUpload2', 'featureImage2')">
-                </div>
-                <div class="qc-report" id="qcReportFeatureImage2"></div>
+                <img id="featureImage2" src="#" alt="Key Feature 2" class="key-feature" style="width: 220px; height: 220px;">
+                <label for="featureImageUpload2" class="upload-btn">Upload Image</label>
+                <input type="file" id="featureImageUpload2" accept="image/*" style="display: none;" onchange="previewImage('featureImageUpload2', 'featureImage2')">
             </div>
             <div class="key-feature-image">
-                <div class="upload-container">
-                    <img id="featureImage3" src="#" alt="Key Feature 3" style="width: 220px; height: 220px;">
-                    <label for="featureImageUpload3" class="upload-btn">Upload Image</label>
-                    <input type="file" id="featureImageUpload3" accept="image/*" style="display: none;" onchange="previewAndQC('featureImageUpload3', 'featureImage3')">
-                </div>
-                <div class="qc-report" id="qcReportFeatureImage3"></div>
+                <img id="featureImage3" src="#" alt="Key Feature 3" class="key-feature" style="width: 220px; height: 220px;">
+                <label for="featureImageUpload3" class="upload-btn">Upload Image</label>
+                <input type="file" id="featureImageUpload3" accept="image/*" style="display: none;" onchange="previewImage('featureImageUpload3', 'featureImage3')">
             </div>
             <div class="key-feature-image">
-                <div class="upload-container">
-                    <img id="featureImage4" src="#" alt="Key Feature 4" style="width: 220px; height: 220px;">
-                    <label for="featureImageUpload4" class="upload-btn">Upload Image</label>
-                    <input type="file" id="featureImageUpload4" accept="image/*" style="display: none;" onchange="previewAndQC('featureImageUpload4', 'featureImage4')">
-                </div>
-                <div class="qc-report" id="qcReportFeatureImage4"></div>
+                <img id="featureImage4" src="#" alt="Key Feature 4" class="key-feature" style="width: 220px; height: 220px;">
+                <label for="featureImageUpload4" class="upload-btn">Upload Image</label>
+                <input type="file" id="featureImageUpload4" accept="image/*" style="display: none;" onchange="previewImage('featureImageUpload4', 'featureImage4')">
             </div>
         </div>
 
@@ -129,47 +84,32 @@
 
         <!-- Module 13: Installation Banner Image -->
         <div class="module banner">
-            <div class="upload-container">
-                <img id="installationBannerImage" src="#" alt="Installation Banner" style="width: 970px; height: 600px;">
-                <label for="installationBannerUpload" class="upload-btn">Upload Installation Banner</label>
-                <input type="file" id="installationBannerUpload" accept="image/*" style="display: none;" onchange="previewAndQC('installationBannerUpload', 'installationBannerImage')">
-            </div>
-            <div class="qc-report" id="qcReportInstallationBanner"></div>
+            <img id="installationBannerImage" src="#" alt="Installation Banner" style="width: 970px; height: 600px;">
+            <label for="installationBannerUpload" class="upload-btn">Upload Installation Banner</label>
+            <input type="file" id="installationBannerUpload" accept="image/*" style="display: none;" onchange="previewImage('installationBannerUpload', 'installationBannerImage')">
         </div>
 
         <!-- Module 14-17: Installation Steps Images -->
         <div class="installation-steps-container">
             <div class="installation-step-image">
-                <div class="upload-container">
-                    <img id="stepImage1" src="#" alt="Step 1" style="width: 220px; height: 220px;">
-                    <label for="stepImageUpload1" class="upload-btn">Upload Step Image</label>
-                    <input type="file" id="stepImageUpload1" accept="image/*" style="display: none;" onchange="previewAndQC('stepImageUpload1', 'stepImage1')">
-                </div>
-                <div class="qc-report" id="qcReportStepImage1"></div>
+                <img id="stepImage1" src="#" alt="Step 1" class="step-image" style="width: 220px; height: 220px;">
+                <label for="stepImageUpload1" class="upload-btn">Upload Step Image</label>
+                <input type="file" id="stepImageUpload1" accept="image/*" style="display: none;" onchange="previewImage('stepImageUpload1', 'stepImage1')">
             </div>
             <div class="installation-step-image">
-                <div class="upload-container">
-                    <img id="stepImage2" src="#" alt="Step 2" style="width: 220px; height: 220px;">
-                    <label for="stepImageUpload2" class="upload-btn">Upload Step Image</label>
-                    <input type="file" id="stepImageUpload2" accept="image/*" style="display: none;" onchange="previewAndQC('stepImageUpload2', 'stepImage2')">
-                </div>
-                <div class="qc-report" id="qcReportStepImage2"></div>
+                <img id="stepImage2" src="#" alt="Step 2" class="step-image" style="width: 220px; height: 220px;">
+                <label for="stepImageUpload2" class="upload-btn">Upload Step Image</label>
+                <input type="file" id="stepImageUpload2" accept="image/*" style="display: none;" onchange="previewImage('stepImageUpload2', 'stepImage2')">
             </div>
             <div class="installation-step-image">
-                <div class="upload-container">
-                    <img id="stepImage3" src="#" alt="Step 3" style="width: 220px; height: 220px;">
-                    <label for="stepImageUpload3" class="upload-btn">Upload Step Image</label>
-                    <input type="file" id="stepImageUpload3" accept="image/*" style="display: none;" onchange="previewAndQC('stepImageUpload3', 'stepImage3')">
-                </div>
-                <div class="qc-report" id="qcReportStepImage3"></div>
+                <img id="stepImage3" src="#" alt="Step 3" class="step-image" style="width: 220px; height: 220px;">
+                <label for="stepImageUpload3" class="upload-btn">Upload Step Image</label>
+                <input type="file" id="stepImageUpload3" accept="image/*" style="display: none;" onchange="previewImage('stepImageUpload3', 'stepImage3')">
             </div>
             <div class="installation-step-image">
-                <div class="upload-container">
-                    <img id="stepImage4" src="#" alt="Step 4" style="width: 220px; height: 220px;">
-                    <label for="stepImageUpload4" class="upload-btn">Upload Step Image</label>
-                    <input type="file" id="stepImageUpload4" accept="image/*" style="display: none;" onchange="previewAndQC('stepImageUpload4', 'stepImage4')">
-                </div>
-                <div class="qc-report" id="qcReportStepImage4"></div>
+                <img id="stepImage4" src="#" alt="Step 4" class="step-image" style="width: 220px; height: 220px;">
+                <label for="stepImageUpload4" class="upload-btn">Upload Step Image</label>
+                <input type="file" id="stepImageUpload4" accept="image/*" style="display: none;" onchange="previewImage('stepImageUpload4', 'stepImage4')">
             </div>
         </div>
 
@@ -192,6 +132,7 @@
                 <button onclick="typeOrPasteText('stepText4')" class="type-btn">Type/Paste Text</button>
             </div>
         </div>
+
     </div>
 
     <!-- Link to JavaScript -->
