@@ -1,3 +1,9 @@
+// Handle start button click to show the login screen
+document.getElementById("startButton").addEventListener("click", function() {
+    document.getElementById("welcomeScreen").classList.add("hidden"); // Hide welcome screen
+    document.getElementById("loginScreen").classList.remove("hidden"); // Show login screen
+});
+
 // Function to handle the response from Google Sign-In
 function handleCredentialResponse(response) {
     // Decode the JWT token to get user info
