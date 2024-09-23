@@ -1,5 +1,5 @@
-// Function to preview the uploaded image in modules
-function previewImage(inputId, imgId) {
+// Function to preview the uploaded image in modules and trigger QC automatically
+function previewImage(inputId, imgId, qcResultId) {
     const input = document.getElementById(inputId);
     const img = document.getElementById(imgId);
 
@@ -7,6 +7,7 @@ function previewImage(inputId, imgId) {
         const reader = new FileReader();
         reader.onload = function (e) {
             img.src = e.target.result;
+            startQC(input.files[0], qcResultId); // Automatically start QC after image is uploaded
         };
         reader.readAsDataURL(input.files[0]);
     }
@@ -62,36 +63,21 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
 }
 
-// Function to preview the uploaded image for QC validation
-function previewImage() {
-    const file = document.getElementById("imageUpload").files[0];
-    const reader = new FileReader();
-
-    reader.onloadend = function() {
-        document.getElementById("previewImage").src = reader.result;
-        document.getElementById("qcResult").innerText = "Image uploaded. Ready for QC.";
-    };
-
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-}
-
 // Function to start the QC process
-function startQC() {
-    const file = document.getElementById("imageUpload").files[0];
+function startQC(file, qcResultId) {
+    const qcResult = document.getElementById(qcResultId);
 
     if (!file) {
-        document.getElementById("qcResult").innerText = "Please upload an image before starting QC.";
+        qcResult.innerText = "Please upload an image before starting QC.";
         return;
     }
 
     // Validate Size (under 2MB)
     const size = file.size / 1024 / 1024; // in MB
     if (size > 2) {
-        document.getElementById("sizeValidation").innerHTML = `<span style="color:red;">Fail (${size.toFixed(2)} MB)</span>`;
+        qcResult.innerHTML += `<p>Size: <span style="color:red;">Fail (${size.toFixed(2)} MB)</span></p>`;
     } else {
-        document.getElementById("sizeValidation").innerHTML = `<span style="color:green;">Pass (${size.toFixed(2)} MB)</span>`;
+        qcResult.innerHTML += `<p>Size: <span style="color:green;">Pass (${size.toFixed(2)} MB)</span></p>`;
     }
 
     // Validate Dimensions
@@ -103,9 +89,9 @@ function startQC() {
 
         // Assuming 970x600px is the valid dimension for A+ content (customize as needed)
         if (width === 970 && height === 600) {
-            document.getElementById("dimensionsValidation").innerHTML = `<span style="color:green;">Pass (${dimensionsText})</span>`;
+            qcResult.innerHTML += `<p>Dimensions: <span style="color:green;">Pass (${dimensionsText})</span></p>`;
         } else {
-            document.getElementById("dimensionsValidation").innerHTML = `<span style="color:red;">Fail (${dimensionsText})</span>`;
+            qcResult.innerHTML += `<p>Dimensions: <span style="color:red;">Fail (${dimensionsText})</span></p>`;
         }
     };
     img.src = URL.createObjectURL(file);
@@ -113,10 +99,10 @@ function startQC() {
     // Validate Format (JPEG only)
     const fileFormat = file.type;
     if (fileFormat === "image/jpeg") {
-        document.getElementById("formatValidation").innerHTML = `<span style="color:green;">Pass (JPEG)</span>`;
+        qcResult.innerHTML += `<p>Format: <span style="color:green;">Pass (JPEG)</span></p>`;
     } else {
-        document.getElementById("formatValidation").innerHTML = `<span style="color:red;">Fail (${fileFormat})</span>`;
+        qcResult.innerHTML += `<p>Format: <span style="color:red;">Fail (${fileFormat})</span></p>`;
     }
 
-    document.getElementById("qcResult").innerText = "QC completed!";
+    qcResult.innerText += "QC completed!";
 }
